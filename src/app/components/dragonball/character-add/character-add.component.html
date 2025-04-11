@@ -1,0 +1,22 @@
+<h2>Agregar</h2>
+<input
+  type="text"
+  class="form-control"
+  placeholder="Nombre"
+  [value]="newCharacter().name"
+  (input)="onCharacterNameChange($event)"
+/>
+<input
+  type="number"
+  class="form-control mt-2"
+  placeholder="Poder"
+  [value]="newCharacter().powerLevel"
+  (input)="onCharacterPowerLevelChange($event)"
+/>
+<button
+  class="btn btn-primary mt-2"
+  (click)="onAddCharacter()"
+  [disabled]="!newCharacter().name || !newCharacter().powerLevel"
+>
+  Agregar
+</button>

@@ -1,0 +1,14 @@
+<h2>{{ listName() }}</h2>
+<ol>
+  @for (character of characters(); track character.id; let idx = $index) { @if
+  (character.powerLevel > minimumPowerLevelPermitted) {
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <span>{{ idx + 1 }} - {{ character.name }}</span>
+    <span
+      [class.text-danger]="character.powerLevel > 9000"
+      [class.text-success]="character.powerLevel <= 9000"
+      >{{ character.powerLevel }}
+    </span>
+  </li>
+  } }
+</ol>
